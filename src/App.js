@@ -12,10 +12,27 @@ import './App.css';
  //usando una clase
 
 class Helloworld extends React.Component{
+  state = {
+    show: true
+  }
+
+  ToggleShow = () =>{
+    this.setState({show:!this.state.show});
+  }
+
   render(){
-    return(
-      <p className="hello">{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
-    );
+    if(this.state.show){
+      return(
+        <p>{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
+        <button>hola</button>
+      );
+    }
+    else{
+      return(
+        <p className="hello">El contenido está oculto</p>
+        <button onClick={this.ToggleShow}>Mostrar contenido</button>
+      );
+    }
   }
 }
 
