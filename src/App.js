@@ -1,13 +1,22 @@
 import React from 'react'
 import './App.css';
 
-function Helloworld(props){
+/* function Helloworld(props){
   let { mytext, text1, text2 } = props
   return(
     <p className="hello">{ mytext } { text1 } { text2 }</p>
   )
 }
+ */
 
+ //usando una arrow function
+
+ const Helloworld = (props) => {
+  let { mytext, text1, text2 } = props;
+  return(
+    <p className="hello">{ mytext } { text1 } { text2 }</p>
+  );
+ }
 
 function App() {
   return (
