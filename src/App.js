@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css';
 
-function Helloworld(){
+function Helloworld(props){
+  let { mytext } = props
   return(
-    <p>hola mundo</p>
+    <p className="hello">{mytext}</p>
   )
 }
 
@@ -11,7 +12,7 @@ function Helloworld(){
 function App() {
   return (
     <div className="App">este es mi primer componente 
-      <Helloworld/>
+      <Helloworld mytext="hola mundo con props"/>
     </div>
   );
 }
