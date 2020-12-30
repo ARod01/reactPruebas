@@ -9,14 +9,16 @@ import './App.css';
 }
  */
 
- //usando una arrow function
+ //usando una clase
 
- const Helloworld = (props) => {
-  let { mytext, text1, text2 } = props;
-  return(
-    <p className="hello">{ mytext } { text1 } { text2 }</p>
-  );
- }
+class Helloworld extends React.Component{
+  render(){
+    return(
+      <p className="hello">{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
+    );
+  }
+}
+
 
 function App() {
   return (
