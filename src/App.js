@@ -22,16 +22,20 @@ class Helloworld extends React.Component{
 
   render(){
     if(this.state.show){
-      return(
-        <p>{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
-        <button>hola</button>
-      );
+      return (
+        <div>
+          <p>{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
+          <button onClick={this.ToggleShow}>Ocultar contenido</button>
+        </div>
+      )
     }
     else{
       return(
-        <p className="hello">El contenido está oculto</p>
-        <button onClick={this.ToggleShow}>Mostrar contenido</button>
-      );
+        <div>
+          <p className="hello">El contenido está oculto</p>
+          <button onClick={this.ToggleShow}>Mostrar contenido</button>
+        </div>
+      )
     }
   }
 }
