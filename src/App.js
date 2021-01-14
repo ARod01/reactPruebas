@@ -1,54 +1,17 @@
-import React from 'react'
+//import React from 'react'
+import React, { Component } from 'react'; //importar componentes desde React
 import './App.css';
+import tareas from './sample/task.json';
 
-/* function Helloworld(props){
-  let { mytext, text1, text2 } = props
-  return(
-    <p className="hello">{ mytext } { text1 } { text2 }</p>
-  )
-}
- */
-
- //usando una clase
-
-class Helloworld extends React.Component{
+class App extends Component{
   state = {
-    show: true
+    task: tareas
   }
-
-  ToggleShow = () =>{
-    this.setState({show:!this.state.show});
-  }
-
   render(){
-    if(this.state.show){
-      return (
-        <div>
-          <p>{ this.props.mytext } { this.props.text1 } { this.props.text2 }</p>
-          <button onClick={this.ToggleShow}>Ocultar contenido</button>
-        </div>
-      )
-    }
-    else{
-      return(
-        <div>
-          <p className="hello">El contenido está oculto</p>
-          <button onClick={this.ToggleShow}>Mostrar contenido</button>
-        </div>
-      )
-    }
-  }
-}
-
-
-function App() {
-  return (
-    <div className="App">este es mi primer componente 
-      <Helloworld mytext="hola mundo con props"/>
-      <Helloworld text1="texto con otro props"/>
-      <Helloworld mytext="hola " text2="soy tercer props"/>
+    return <div>
+      { this.state.task.map((e) => <h3>{e.titulo}</h3>) }
     </div>
-  );
+  }
 }
 
 export default App;
